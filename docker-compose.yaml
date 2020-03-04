@@ -1,0 +1,39 @@
+version: '3'
+
+services:
+  easy-slider-wp:
+    container_name: easy-slider-wp
+    build: ./docker
+    depends_on:
+      - easy-slider-db
+    ports:
+      - "8080:80"
+    restart: 'no'
+    volumes:
+      - ./:/var/www/html/wp-content/plugins/easy-slider
+      - /dev/null:/var/www/html/wp-content/plugins/easy-slider/docker/
+    environment:
+      WORDPRESS_DB_HOST: easy-slider-db
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DEBUG: 1
+      WORDPRESS_CONFIG_EXTRA: |
+        define('FS_METHOD', 'direct');
+      
+  
+  easy-slider-db:
+    image: mysql:5.7
+    volumes:
+      #- ./data:/docker-entrypoint-initdb.d
+      - ./docker/mysql:/var/lib/mysql #Allow data to persist
+    restart: 'no'
+    environment:
+      MYSQL_ROOT_PASSWORD: somewordpress
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
+      
+
+
+

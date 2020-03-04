@@ -1,0 +1,11 @@
+.wp-block-easy-slider-slider-block{
+    background-color: #00000020;
+    background-image: repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.5) 35px, rgba(255,255,255,.5) 70px);
+    padding:5px;
+}
+
+.wp-block-easy-slider-slide-item-block{
+    background-color: #ffffff90;
+    padding:20px;
+}
+#slides-to-show-text-control{width:60px}

@@ -1,0 +1,22 @@
+{
+  "name": "wordpress-easy-slider",
+  "version": "1.0.0",
+  "description": "Slider Gutenberg block for Easy Slider plugin ",
+  "main": "index.js",
+  "scripts": {
+    "start": "wp-scripts start",
+    "build": "wp-scripts build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "slider",
+    "carousel",
+    "gutenberg",
+    "wordpress"
+  ],
+  "author": "woofx",
+  "license": "ISC",
+  "devDependencies": {
+    "@wordpress/scripts": "^7.1.2"
+  }
+}
